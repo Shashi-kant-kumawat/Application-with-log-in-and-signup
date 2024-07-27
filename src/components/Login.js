@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom"
-import Home from './Home';
+import { Link } from "react-router-dom" ;
 function Login() {
     const [thats, setThats] = useState(false)
     const Submit = (e) => {
@@ -12,24 +11,33 @@ function Login() {
         let entery=JSON.parse(localStorage.getItem("user"))
 
         entery.map((value)=>{
+           
+           
              if(value.email!==email){
-                    return alert("Email is wrong")
+                     alert("Email is wrong")
+                     return
              }
+             
              if(value.password!==password){
-                return alert("password is wrong")
+                 alert("password is wrong")
+                 return
              }
              if(value.name!==name){
-                return alert("name was not matche")
+                 alert("name was not matche")
+                 return
              }
              if(value.lname!==last_name){
-                return alert("last name was not matche")
+                 alert("last name was not matche")
+                 return
              }
              document.getElementById("name").value="" ;
              document.getElementById("lname").value="" ;
              document.getElementById("email").value="" ;
              document.getElementById("password").value="";
-
-             <Home/>
+           
+                alert("code is running")
+            
+             
         })
 
     }
