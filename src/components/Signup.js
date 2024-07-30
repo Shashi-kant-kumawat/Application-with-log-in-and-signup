@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom"
 function Signup() {
+   
     const [number, setNumber] = useState("") ;
     const [thats,setThats]=useState(false)
     const Checking = (e) => {
@@ -22,6 +23,7 @@ function Signup() {
         let password = document.getElementById("password").value;
         let date = document.getElementById("date").value;
         let phoneno = document.getElementById("phoneno").value;
+        let selected=document.getElementById("selected").value
         let arr = []
         arr = JSON.parse(localStorage.getItem("user")) ? JSON.parse(localStorage.getItem("user")) : []
         if (arr.some((v) => {
@@ -38,10 +40,12 @@ function Signup() {
                 email,
                 password,
                 date,
-                phoneno
+                phoneno,
+                selected,
+
             })
         }
-        localStorage.setItem("user", JSON.stringify(arr))
+        localStorage.setItem("user", JSON.stringify(arr))  
         document.getElementById("name").value=""
         document.getElementById("lname").value=""
         document.getElementById("add").value=""
@@ -49,6 +53,7 @@ function Signup() {
         document.getElementById("password").value=""
         document.getElementById("date").value=""
         document.getElementById("phoneno").value=""
+        alert("Now you can Log in")
     }
     const Open=(e)=>{
      e.preventDefault()
@@ -92,7 +97,12 @@ function Signup() {
                 <div className='flex place-content-center gap-5'>
                     <button onClick={Submit} id='btn' className='w-28 bg-slate-900 text-white rounded-lg  text-lg hover:text-blue-800 hover:bg-white'>Submit</button>
                     <button className=' w-28 bg-slate-900 text-white rounded-lg  text-lg hover:text-blue-800 hover:bg-white'><Link to='/login'>Log in</Link></button>
+                    <select id='selected' className='rounded-lg'>
+                        <option>Admin</option>
+                       <option  >User</option>
+                    </select>
                 </div>
+              
             </form>
 
         </div>

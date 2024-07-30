@@ -9,6 +9,7 @@ function Navbar() {
                     <Link to="/" className=' hover:text-blue-600 hover:underline'>Home</Link>
                     <Link to="/about" className=' hover:text-blue-600 hover:underline'>About Us</Link>
                     <Link to="/services" className=' hover:text-blue-600 hover:underline'>Services</Link>
+                    <Link to="/admin" className=' hover:text-blue-600 hover:underline'>Admin only</Link>
                 </div>
                 <div className=' flex-row  sm:space-x-8  sm:flex'>
                     
